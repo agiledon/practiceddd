@@ -1,32 +1,26 @@
 package practiceddd.eas.projectcontext.domain.scrumprocess;
 
 import practiceddd.eas.dddcore.Entity;
-import practiceddd.eas.dddcore.Identity;
 import practiceddd.eas.projectcontext.domain.exception.InvalidAssignmentException;
 import practiceddd.eas.projectcontext.domain.exception.InvalidBacklogException;
-import practiceddd.eas.projectcontext.domain.role.Assignee;
-import practiceddd.eas.projectcontext.domain.role.Assigner;
+import practiceddd.eas.projectcontext.domain.role.MemberId;
+import practiceddd.eas.projectcontext.domain.role.TeamMember;
 
-public class SprintBacklog extends Entity<Identity> {
-    private Identity id;
+public class SprintBacklog extends Entity<BacklogId> {
     private String title;
     private String description;
     private BacklogStatus backlogStatus;
-    private Assigner assigner;
-    private Assignee assignee;
+    private MemberId ownerId = null;
 
-    public SprintBacklog(String title, String description) {
+    public SprintBacklog(BacklogId backlogId, String title, String description) {
         if (title == null) {
             throw new InvalidBacklogException("the title of backlog can't be null");
         }
 
+        this.id = backlogId;
         this.title = title;
         this.description = description;
         this.backlogStatus = new NewBacklogStatus();
-    }
-
-    public Identity id() {
-        return this.id;
     }
 
     public String title() {
@@ -37,12 +31,15 @@ public class SprintBacklog extends Entity<Identity> {
         return this.description;
     }
 
-    public void assignedTo(Assigner assigner, Assignee assignee) {
+    public SprintBacklogAssignment assignTo(TeamMember assignee) {
         if (this.backlogStatus.isClosed()) {
             throw new InvalidAssignmentException(
-                    String.format("The closed sprint backlog %s can not be assigned to %s.", this.title, assignee.getName()));
+                    String.format("The closed sprint backlog %s can not be assigned to %s.", this.title, assignee.name()));
         }
-        this.assigner = assigner;
-        this.assignee = assignee;
+        if (assignee.isSame(this.ownerId)) {
+            throw new InvalidAssignmentException(
+                    String.format("The sprint backlog %s not allow to assign to same team member %s.", this.title, assignee.name()));
+        }
+        return new SprintBacklogAssignment(this.id, assignee.id());
     }
 }

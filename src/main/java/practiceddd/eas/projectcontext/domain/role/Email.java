@@ -14,7 +14,7 @@ public class Email {
         this.address = address;
     }
 
-    public final String getAddress() {
+    public final String address() {
         return address;
     }
 }
