@@ -1,6 +1,8 @@
 package top.dddclub.practiceddd.dddcore;
 
-public abstract class Entity<T> {
+import top.dddclub.practiceddd.dddcore.identity.Identity;
+
+public abstract class Entity<T extends Identity> {
     protected T id;
 
     public T id() {

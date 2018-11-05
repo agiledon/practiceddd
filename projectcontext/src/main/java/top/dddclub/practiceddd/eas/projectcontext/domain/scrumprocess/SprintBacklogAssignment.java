@@ -1,7 +1,7 @@
 package top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess;
 
 import top.dddclub.practiceddd.dddcore.Entity;
-import top.dddclub.practiceddd.dddcore.UUIDIdentity;
+import top.dddclub.practiceddd.dddcore.identity.UUIDIdentity;
 import top.dddclub.practiceddd.eas.projectcontext.domain.role.MemberId;
 
 import java.time.LocalDateTime;

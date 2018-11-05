@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.dddcore;
+package top.dddclub.practiceddd.dddcore.identity;
 
 import java.util.UUID;
 

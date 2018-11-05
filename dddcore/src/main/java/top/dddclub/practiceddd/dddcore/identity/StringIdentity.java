@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.dddcore;
+package top.dddclub.practiceddd.dddcore.identity;
 
 public class StringIdentity implements Identity<String> {
     private String value;
