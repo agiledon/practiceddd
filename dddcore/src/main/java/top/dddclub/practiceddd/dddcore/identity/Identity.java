@@ -1,6 +1,8 @@
 package top.dddclub.practiceddd.dddcore.identity;
 
-public interface Identity<T> {
+import java.io.Serializable;
+
+public interface Identity<T> extends Serializable {
     T value();
     boolean isEmpty();
     T emptyId();

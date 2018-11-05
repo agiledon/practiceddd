@@ -9,6 +9,8 @@ public class UUIDIdentity implements RandomIdentity<String>, Identity<String> {
         this.value = next();
     }
 
+    private static final long serialVersionUID = 1L;
+
     @Override
     public String next() {
         return UUID.randomUUID().toString();

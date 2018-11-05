@@ -7,6 +7,8 @@ public class StringIdentity implements Identity<String> {
         this.value = value;
     }
 
+    private static final long serialVersionUID = 1L;
+
     @Override
     public String value() {
         return this.value;

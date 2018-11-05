@@ -1,12 +1,17 @@
 package top.dddclub.practiceddd.dddcore.identity;
 
+import jdk.nashorn.internal.ir.annotations.Immutable;
+
 import java.util.Random;
 
+@Immutable
 public class RuleRandomIdentity implements RandomIdentity<String>, Identity<String> {
     private String value;
     private String prefix;
     private int seed;
     private String joiner;
+
+    private static final long serialVersionUID = 1L;
 
     public RuleRandomIdentity(String value) {
         this.value = value;
