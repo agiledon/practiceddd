@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.exception;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.exception;
 
 public class InvalidAssignmentException extends RuntimeException {
     public InvalidAssignmentException() {

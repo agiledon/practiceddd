@@ -1,6 +1,6 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.role;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.role;
 
-import top.dddclub.practiceddd.dddcore.Entity;
+import xyz.zhangyipracticeddd.dddcore.Entity;
 
 public class TeamMember extends Entity<MemberId> {
     private Name name;

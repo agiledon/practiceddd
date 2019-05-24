@@ -1,6 +1,6 @@
-package top.dddclub.practiceddd.eas.projectcontext.repositories;
+package xyz.zhangyipracticeddd.eas.projectcontext.repositories;
 
-import top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess.SprintBacklog;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess.SprintBacklog;
 
 public interface SprintBacklogRepository {
     void update(SprintBacklog backlog);

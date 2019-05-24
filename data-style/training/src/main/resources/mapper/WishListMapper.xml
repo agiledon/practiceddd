@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.zhangyi.practiceddd.training.mapper.WishListMapper">
+    <select id="exists" resultType="boolean">
+        select case when count(*) > 0 then 1 else 0 end result
+        from t_wish_list
+        where studentId = #{studentId} and courseId = #{courseId}
+    </select>
+
+    <insert id="insert">
+        insert into t_wish_list(studentId, courseId)
+        values (#{studentId}, #{courseId})
+    </insert>
+
+    <delete id="delete">
+        delete from t_wish_list where studentId = #{studentId} and courseId = #{courseId}
+    </delete>
+</mapper>

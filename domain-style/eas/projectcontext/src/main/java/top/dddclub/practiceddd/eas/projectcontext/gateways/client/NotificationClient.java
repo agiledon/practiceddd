@@ -1,9 +1,9 @@
-package top.dddclub.practiceddd.eas.projectcontext.gateways.client;
+package xyz.zhangyipracticeddd.eas.projectcontext.gateways.client;
 
 import org.springframework.stereotype.Service;
-import top.dddclub.practiceddd.eas.notificationcontext.application.NotificationAppService;
-import top.dddclub.practiceddd.eas.notificationcontext.domain.Message;
-import top.dddclub.practiceddd.eas.projectcontext.interfaces.notification.NotificationService;
+import xyz.zhangyipracticeddd.eas.notificationcontext.application.NotificationAppService;
+import xyz.zhangyipracticeddd.eas.notificationcontext.domain.Message;
+import xyz.zhangyipracticeddd.eas.projectcontext.interfaces.notification.NotificationService;
 
 @Service
 public class NotificationClient implements NotificationService {

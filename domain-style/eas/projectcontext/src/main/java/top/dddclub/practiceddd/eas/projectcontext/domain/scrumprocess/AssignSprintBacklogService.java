@@ -1,11 +1,11 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.dddclub.practiceddd.eas.projectcontext.domain.role.TeamMember;
-import top.dddclub.practiceddd.eas.projectcontext.interfaces.notification.NotificationService;
-import top.dddclub.practiceddd.eas.projectcontext.repositories.SprintBacklogAssignmentRepository;
-import top.dddclub.practiceddd.eas.projectcontext.repositories.SprintBacklogRepository;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.role.TeamMember;
+import xyz.zhangyipracticeddd.eas.projectcontext.interfaces.notification.NotificationService;
+import xyz.zhangyipracticeddd.eas.projectcontext.repositories.SprintBacklogAssignmentRepository;
+import xyz.zhangyipracticeddd.eas.projectcontext.repositories.SprintBacklogRepository;
 
 @Service
 public class AssignSprintBacklogService {

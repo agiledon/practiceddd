@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.role;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.role;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 

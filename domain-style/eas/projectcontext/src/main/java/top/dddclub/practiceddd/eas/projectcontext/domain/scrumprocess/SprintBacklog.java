@@ -1,10 +1,10 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess;
 
-import top.dddclub.practiceddd.dddcore.Entity;
-import top.dddclub.practiceddd.eas.projectcontext.domain.exception.InvalidAssignmentException;
-import top.dddclub.practiceddd.eas.projectcontext.domain.exception.InvalidBacklogException;
-import top.dddclub.practiceddd.eas.projectcontext.domain.role.MemberId;
-import top.dddclub.practiceddd.eas.projectcontext.domain.role.TeamMember;
+import xyz.zhangyipracticeddd.dddcore.Entity;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.exception.InvalidAssignmentException;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.exception.InvalidBacklogException;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.role.MemberId;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.role.TeamMember;
 
 public class SprintBacklog extends Entity<BacklogId> {
     private String title;

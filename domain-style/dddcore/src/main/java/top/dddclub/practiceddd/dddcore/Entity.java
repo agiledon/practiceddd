@@ -1,6 +1,6 @@
-package top.dddclub.practiceddd.dddcore;
+package xyz.zhangyipracticeddd.dddcore;
 
-import top.dddclub.practiceddd.dddcore.identity.Identity;
+import xyz.zhangyipracticeddd.dddcore.identity.Identity;
 
 public abstract class Entity<T extends Identity> {
     protected T id;

@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.projectcontext;
+package xyz.zhangyipracticeddd.eas.projectcontext;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

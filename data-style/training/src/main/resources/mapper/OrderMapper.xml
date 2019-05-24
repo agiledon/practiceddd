@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.zhangyi.practiceddd.training.mapper.OrderMapper">
+    <resultMap id="order" type="xyz.zhangyi.practiceddd.training.model.Order">
+        <constructor>
+            <idArg column="orderId" javaType="String" />
+        </constructor>
+        <result property="status" column="orderStatus" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+        <association property="student" javaType="xyz.zhangyi.practiceddd.training.model.Student">
+            <id property="id" column="studentId" />
+            <result property="name" column="studentName" />
+            <result property="email" column="email" />
+        </association>
+        <collection property="orderItems" ofType="xyz.zhangyi.practiceddd.training.model.OrderItem">
+            <id property="id" column="itemId" />
+            <association property="training" javaType="xyz.zhangyi.practiceddd.training.model.Training">
+                <id property="id" column="trainingId" />
+                <association property="student" javaType="xyz.zhangyi.practiceddd.training.model.Student" />
+                <association property="course" javaType="xyz.zhangyi.practiceddd.training.model.Course">
+                    <id property="id" column="courseId" />
+                    <result property="name" column="courseName" />
+                    <result property="description" column="courseDescription" />
+                    <association property="teacher" javaType="xyz.zhangyi.practiceddd.training.model.Teacher">
+                        <id property="id" column="teacherId" />
+                        <result property="name" column="teacherName" />
+                    </association>
+                </association>
+                <association property="calendar" javaType="xyz.zhangyi.practiceddd.training.model.Calendar">
+                    <id property="id" column="calendarId" />
+                    <result property="place" column="place" />
+                    <result property="startDate" column="startDate" />
+                    <result property="endDate" column="endDate" />
+                </association>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="getOrder" resultMap="order">
+        select
+            o.id as orderId,
+            o.status as orderStatus,
+            s.id as studentId,
+            s.name as studentName,
+            s.email as email,
+            oi.id as orderItemId,
+            t.id as trainingId,
+            c.id as courseId,
+            c.name as courseName,
+            c.description as courseDescription,
+            te.id as teacherId,
+            te.name as teacherName,
+            ca.id as calendarId,
+            ca.place as place,
+            ca.startDate as startDate,
+            ca.endDate as endDate
+        from t_order o
+            left outer join t_student s on o.studentId = s.id
+            left outer join t_order_item oi on oi.orderId = o.id
+            left outer join t_training t on oi.trainingId = t.id
+            left outer join t_course c on t.courseId = c.id
+            left outer join t_teacher te on c.teacherId = te.id
+            left outer join t_calendar ca on t.calendarId = ca.id
+        where o.id = #{orderId}
+    </select>
+</mapper>

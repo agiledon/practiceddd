@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess;
 
 public class AssignmentNotification {
     private SprintBacklogAssignment assignment;

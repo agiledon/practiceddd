@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.dddcore.exception;
+package xyz.zhangyipracticeddd.dddcore.exception;
 
 public class ApplicationException extends Exception {
     public ApplicationException() {

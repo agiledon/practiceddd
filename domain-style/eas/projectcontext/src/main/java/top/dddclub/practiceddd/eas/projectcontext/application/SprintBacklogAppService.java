@@ -1,12 +1,12 @@
-package top.dddclub.practiceddd.eas.projectcontext.application;
+package xyz.zhangyipracticeddd.eas.projectcontext.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.dddclub.practiceddd.dddcore.exception.ApplicationException;
-import top.dddclub.practiceddd.eas.projectcontext.domain.exception.InvalidAssignmentException;
-import top.dddclub.practiceddd.eas.projectcontext.domain.role.TeamMember;
-import top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess.AssignSprintBacklogService;
-import top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess.SprintBacklog;
+import xyz.zhangyipracticeddd.dddcore.exception.ApplicationException;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.exception.InvalidAssignmentException;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.role.TeamMember;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess.AssignSprintBacklogService;
+import xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess.SprintBacklog;
 
 @Service
 public class SprintBacklogAppService {

@@ -1,6 +1,6 @@
-package top.dddclub.practiceddd.eas.projectcontext.domain.scrumprocess;
+package xyz.zhangyipracticeddd.eas.projectcontext.domain.scrumprocess;
 
-import top.dddclub.practiceddd.dddcore.identity.RuleRandomIdentity;
+import xyz.zhangyipracticeddd.dddcore.identity.RuleRandomIdentity;
 
 public final class BacklogId extends RuleRandomIdentity {
     private String backlogId;

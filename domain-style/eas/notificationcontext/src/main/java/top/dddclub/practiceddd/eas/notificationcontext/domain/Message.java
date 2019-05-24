@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.notificationcontext.domain;
+package xyz.zhangyipracticeddd.eas.notificationcontext.domain;
 
 public class Message {
     private String subject;

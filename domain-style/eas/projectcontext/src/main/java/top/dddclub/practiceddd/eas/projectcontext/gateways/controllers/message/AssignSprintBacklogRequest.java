@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.eas.projectcontext.gateways.controllers.message;
+package xyz.zhangyipracticeddd.eas.projectcontext.gateways.controllers.message;
 
 public class AssignSprintBacklogRequest {
 }

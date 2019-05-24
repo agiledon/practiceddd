@@ -1,7 +1,7 @@
-package top.dddclub.practiceddd.eas.notificationcontext.application;
+package xyz.zhangyipracticeddd.eas.notificationcontext.application;
 
-import top.dddclub.practiceddd.eas.notificationcontext.domain.Destination;
-import top.dddclub.practiceddd.eas.notificationcontext.domain.Message;
+import xyz.zhangyipracticeddd.eas.notificationcontext.domain.Destination;
+import xyz.zhangyipracticeddd.eas.notificationcontext.domain.Message;
 
 public class NotificationAppService {
     public void send(Destination destination, Message message) {

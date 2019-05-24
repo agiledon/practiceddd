@@ -1,4 +1,4 @@
-package top.dddclub.practiceddd.dddcore.identity;
+package xyz.zhangyipracticeddd.dddcore.identity;
 
 import java.io.Serializable;
 
