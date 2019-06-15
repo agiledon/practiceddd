@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="development.properties"></properties>
     <typeAliases>
         <typeAlias type="xyz.zhangyi.practiceddd.training.model.Order" alias="Order"/>
         <typeAlias type="xyz.zhangyi.practiceddd.training.model.Student" alias="Student"/>
@@ -17,10 +18,10 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/training?"/>
-                <property name="username" value="root"/>
-                <property name="password" value=""/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
