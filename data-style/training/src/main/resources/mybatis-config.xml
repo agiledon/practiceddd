@@ -3,6 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Order" alias="Order"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Student" alias="Student"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.OrderItem" alias="OrderItem"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Training" alias="Training"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Student" alias="Student"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Course" alias="Course"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Teacher" alias="Teacher"/>
+        <typeAlias type="xyz.zhangyi.practiceddd.training.model.Calendar" alias="Calendar"/>
+    </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>

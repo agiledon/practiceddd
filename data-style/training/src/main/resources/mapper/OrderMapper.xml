@@ -3,31 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="xyz.zhangyi.practiceddd.training.mapper.OrderMapper">
-    <resultMap id="order" type="xyz.zhangyi.practiceddd.training.model.Order">
+    <resultMap id="order" type="Order">
         <constructor>
             <idArg column="orderId" javaType="String" />
         </constructor>
         <result property="status" column="orderStatus" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
-        <association property="student" javaType="xyz.zhangyi.practiceddd.training.model.Student">
+        <association property="student" javaType="Student">
             <id property="id" column="studentId" />
             <result property="name" column="studentName" />
             <result property="email" column="email" />
+            <result property="mobilePhone" column="mobilePhone" />
         </association>
-        <collection property="orderItems" ofType="xyz.zhangyi.practiceddd.training.model.OrderItem">
+        <collection property="orderItems" ofType="OrderItem">
             <id property="id" column="itemId" />
-            <association property="training" javaType="xyz.zhangyi.practiceddd.training.model.Training">
+            <association property="training" javaType="Training">
                 <id property="id" column="trainingId" />
-                <association property="student" javaType="xyz.zhangyi.practiceddd.training.model.Student" />
-                <association property="course" javaType="xyz.zhangyi.practiceddd.training.model.Course">
+                <association property="student" javaType="Student" />
+                <association property="course" javaType="Course">
                     <id property="id" column="courseId" />
                     <result property="name" column="courseName" />
                     <result property="description" column="courseDescription" />
-                    <association property="teacher" javaType="xyz.zhangyi.practiceddd.training.model.Teacher">
+                    <association property="teacher" javaType="Teacher">
                         <id property="id" column="teacherId" />
                         <result property="name" column="teacherName" />
                     </association>
                 </association>
-                <association property="calendar" javaType="xyz.zhangyi.practiceddd.training.model.Calendar">
+                <association property="calendar" javaType="Calendar">
                     <id property="id" column="calendarId" />
                     <result property="place" column="place" />
                     <result property="startDate" column="startDate" />
@@ -44,6 +45,7 @@
             s.id as studentId,
             s.name as studentName,
             s.email as email,
+            s.mobilePhone as mobilePhone,
             oi.id as orderItemId,
             t.id as trainingId,
             c.id as courseId,
